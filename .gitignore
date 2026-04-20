@@ -41,3 +41,13 @@ next-env.d.ts
 # Supabase
 supabase/.branches
 supabase/.temp
+
+# Claude Code (local settings)
+.claude/settings.local.json
+
+# Obsidian workspace state
+Vault/.obsidian/workspace.json
+Vault/.obsidian/workspace-mobile.json
+
+# Nested lockfiles (monorepo uses root lockfile)
+apps/*/pnpm-lock.yaml

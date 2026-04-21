@@ -15,7 +15,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@skillset360/types": ["../../packages/types/src/index.ts"],
+      "@skillset360/ui": ["../../packages/ui/src/index.ts"],
+      "@skillset360/db-client": ["../../packages/db-client/src/index.ts"]
     }
   },
   "include": [

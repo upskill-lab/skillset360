@@ -10,14 +10,15 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@skillset360/db-client": "workspace:*",
+    "@skillset360/types": "workspace:*",
+    "@skillset360/ui": "workspace:*",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.47.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "@skillset360/types": "workspace:*",
-    "@skillset360/ui": "workspace:*",
-    "@skillset360/db-client": "workspace:*",
-    "@supabase/supabase-js": "^2.47.0",
-    "@supabase/ssr": "^0.5.0"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

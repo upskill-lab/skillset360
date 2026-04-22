@@ -32,6 +32,12 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Read role from JWT claims (injected by custom_access_token_hook, no DB query)
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
+  const role = session?.user?.app_metadata?.role as string | undefined
+
   const path = request.nextUrl.pathname
   const isProtected = PROTECTED_PREFIXES.some((p) => path.startsWith(p))
   const isAuthOnly = AUTH_ONLY_PREFIXES.some((p) => path.startsWith(p))

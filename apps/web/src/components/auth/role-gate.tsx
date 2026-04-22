@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { getProfile } from '@/lib/session'
+import { getSession, getRole } from '@/lib/session'
 import type { UserRole } from '@skillset360/types'
 
 interface RoleGateProps {
@@ -9,12 +9,12 @@ interface RoleGateProps {
 }
 
 export async function RoleGate({ role, children, fallback }: RoleGateProps) {
-  const profile = await getProfile()
+  const user = await getSession()
+  if (!user) redirect('/login')
 
-  if (!profile) redirect('/login')
-
+  const userRole = await getRole()
   const allowed = Array.isArray(role) ? role : [role]
-  const hasRole = allowed.includes(profile.primary_role as UserRole)
+  const hasRole = userRole !== null && allowed.includes(userRole)
 
   if (!hasRole) {
     if (fallback) return <>{fallback}</>

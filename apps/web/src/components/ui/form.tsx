@@ -43,14 +43,15 @@ const FormItemContext = React.createContext<FormItemContextValue>({} as FormItem
 
 function useFormField() {
   const fieldContext = React.useContext(FormFieldContext)
+
+  if (!fieldContext.name) {
+    throw new Error('useFormField should be used within <FormField>')
+  }
+
   const itemContext = React.useContext(FormItemContext)
   const { getFieldState, formState } = useFormContext()
 
   const fieldState = getFieldState(fieldContext.name, formState)
-
-  if (!fieldContext) {
-    throw new Error('useFormField should be used within <FormField>')
-  }
 
   const { id } = itemContext
 
@@ -96,6 +97,7 @@ function FormControl({
 }) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
+  // cloneElement works for all shadcn components (they spread props); breaks if children don't forward props
   return React.cloneElement(children, {
     id: formItemId,
     'aria-describedby': !error ? formDescriptionId : `${formDescriptionId} ${formMessageId}`,

@@ -1,0 +1,126 @@
+{
+  "dimensions": [
+    {
+      "slug": "inner-compass",
+      "name": "Inner Compass",
+      "sort_order": 1,
+      "description": "Autoconocimiento, gestión emocional y propósito personal."
+    },
+    {
+      "slug": "collaborative-synergy",
+      "name": "Collaborative Synergy",
+      "sort_order": 2,
+      "description": "Capacidad para crear relaciones de trabajo de alto valor."
+    },
+    {
+      "slug": "impactful-leadership",
+      "name": "Impactful Leadership",
+      "sort_order": 3,
+      "description": "Inspirar, decidir y responsabilizarse por resultados colectivos."
+    },
+    {
+      "slug": "next-frontier-thinking",
+      "name": "Next Frontier Thinking",
+      "sort_order": 4,
+      "description": "Pensamiento sistémico, innovación y agilidad de aprendizaje."
+    },
+    {
+      "slug": "customer-centricity",
+      "name": "Customer Centricity",
+      "sort_order": 5,
+      "description": "Orientación al cliente, empatía y cultura de feedback."
+    }
+  ],
+  "skills": [
+    {
+      "slug": "self-awareness",
+      "name": "Self-Awareness",
+      "dimension": "inner-compass",
+      "description": "Conocimiento profundo de las propias emociones, fortalezas y áreas de mejora."
+    },
+    {
+      "slug": "resilience",
+      "name": "Resilience",
+      "dimension": "inner-compass",
+      "description": "Capacidad de recuperarse ante adversidades y mantener el desempeño bajo presión."
+    },
+    {
+      "slug": "emotional-regulation",
+      "name": "Emotional Regulation",
+      "dimension": "inner-compass",
+      "description": "Gestión efectiva de las emociones propias en contextos de alta exigencia."
+    },
+    {
+      "slug": "active-listening",
+      "name": "Active Listening",
+      "dimension": "collaborative-synergy",
+      "description": "Escucha genuina y comprensión profunda de las perspectivas de otros."
+    },
+    {
+      "slug": "conflict-resolution",
+      "name": "Conflict Resolution",
+      "dimension": "collaborative-synergy",
+      "description": "Gestión constructiva de conflictos para fortalecer relaciones y resultados."
+    },
+    {
+      "slug": "trust-building",
+      "name": "Trust Building",
+      "dimension": "collaborative-synergy",
+      "description": "Generación de confianza sostenida a través de consistencia e integridad."
+    },
+    {
+      "slug": "vision-setting",
+      "name": "Vision Setting",
+      "dimension": "impactful-leadership",
+      "description": "Articulación clara de un futuro inspirador que moviliza a otros."
+    },
+    {
+      "slug": "decision-making",
+      "name": "Decision Making",
+      "dimension": "impactful-leadership",
+      "description": "Toma de decisiones ágiles y fundamentadas en contextos de incertidumbre."
+    },
+    {
+      "slug": "accountability",
+      "name": "Accountability",
+      "dimension": "impactful-leadership",
+      "description": "Responsabilidad personal y del equipo por compromisos y resultados."
+    },
+    {
+      "slug": "systems-thinking",
+      "name": "Systems Thinking",
+      "dimension": "next-frontier-thinking",
+      "description": "Comprensión de interrelaciones complejas y efectos de segundo orden."
+    },
+    {
+      "slug": "innovation-mindset",
+      "name": "Innovation Mindset",
+      "dimension": "next-frontier-thinking",
+      "description": "Apertura a explorar nuevas ideas y tolerar la ambigüedad del cambio."
+    },
+    {
+      "slug": "learning-agility",
+      "name": "Learning Agility",
+      "dimension": "next-frontier-thinking",
+      "description": "Velocidad para adquirir nuevas competencias y aplicarlas efectivamente."
+    },
+    {
+      "slug": "customer-empathy",
+      "name": "Customer Empathy",
+      "dimension": "customer-centricity",
+      "description": "Comprensión profunda de las necesidades y experiencias del cliente."
+    },
+    {
+      "slug": "service-orientation",
+      "name": "Service Orientation",
+      "dimension": "customer-centricity",
+      "description": "Disposición genuina a agregar valor en cada interacción con el cliente."
+    },
+    {
+      "slug": "feedback-culture",
+      "name": "Feedback Culture",
+      "dimension": "customer-centricity",
+      "description": "Capacidad de dar y recibir feedback de forma constructiva y continua."
+    }
+  ]
+}

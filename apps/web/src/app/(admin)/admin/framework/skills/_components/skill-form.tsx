@@ -45,6 +45,7 @@ export function SkillForm({
 }: SkillFormProps) {
   const [slug, setSlug] = useState(defaultValues?.slug ?? '')
   const [slugManual, setSlugManual] = useState(!!defaultValues?.slug)
+  const [dimensionId, setDimensionId] = useState(defaultValues?.dimension_id ?? '')
 
   return (
     <form action={action} className="max-w-lg space-y-4">
@@ -85,8 +86,10 @@ export function SkillForm({
 
       <div className="space-y-1">
         <Label htmlFor="dimension_id">Dimensión</Label>
-        {/* @base-ui/react Select.Root supports `name` — renders a hidden input for FormData */}
-        <Select name="dimension_id" defaultValue={defaultValues?.dimension_id}>
+        {/* Defensive hidden input ensures dimension_id is always submitted to FormData,
+            regardless of Base UI Select implementation details. Controlled via state. */}
+        <input type="hidden" name="dimension_id" value={dimensionId} />
+        <Select value={dimensionId} onValueChange={(v) => setDimensionId(v ?? '')}>
           <SelectTrigger id="dimension_id" className="w-full">
             <SelectValue placeholder="Seleccioná una dimensión" />
           </SelectTrigger>

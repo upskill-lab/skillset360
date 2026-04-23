@@ -129,7 +129,13 @@ export async function createSkill(formData: FormData): Promise<void> {
     level: n,
     observable_behaviors: '',
   }))
-  await supabase.from('skill_levels').insert(levels)
+  const { error: levelsError } = await supabase.from('skill_levels').insert(levels)
+  if (levelsError) {
+    await supabase.from('skills').delete().eq('id', skill.id)
+    redirect(
+      `/admin/framework/skills/new?error=${encodeError('Error al crear niveles de la skill.')}`,
+    )
+  }
   revalidatePath('/admin/framework/skills')
   redirect(`/admin/framework/skills/${skill.id}`)
 }
@@ -170,7 +176,9 @@ export async function archiveSkill(id: string): Promise<void> {
 
 export async function updateSkillLevels(formData: FormData): Promise<void> {
   const skillId = String(formData.get('skill_id') ?? '')
-  if (!skillId) redirect(`/admin/framework/skills?error=${encodeError('Skill inválida')}`)
+  if (!skillId || !z.string().uuid().safeParse(skillId).success) {
+    redirect(`/admin/framework/skills?error=${encodeError('Skill inválida')}`)
+  }
 
   const levels = ([1, 2, 3, 4, 5] as const).map((n) => ({
     skill_id: skillId,
